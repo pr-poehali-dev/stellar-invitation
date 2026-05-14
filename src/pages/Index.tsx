@@ -285,37 +285,8 @@ export default function Index() {
         {/* ── О ДАРЬЕ МАГ ── */}
         <section id="about" className="relative z-10 py-24 md:py-32" style={{ background: 'rgba(10,6,20,0.96)' }}>
           <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
-
-              {/* Фото */}
-              <div className="relative flex justify-center lg:justify-start">
-                <div className="relative" style={{ maxWidth: '420px', width: '100%' }}>
-                  {/* Золотая рамка-декор */}
-                  <div
-                    className="absolute -inset-3 pointer-events-none"
-                    style={{ border: '1px solid rgba(182,139,64,0.2)' }}
-                  />
-                  <div
-                    className="absolute -inset-6 pointer-events-none"
-                    style={{ border: '1px solid rgba(182,139,64,0.08)' }}
-                  />
-                  <img
-                    src="https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/1f8175ee-356d-40ff-b12e-9ecf7966b813.png"
-                    alt="Дарья Маг — таролог и практик"
-                    className="w-full object-cover"
-                    style={{
-                      filter: 'brightness(0.92) contrast(1.05)',
-                      display: 'block',
-                    }}
-                  />
-                  {/* Золотой оверлей снизу */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-                    style={{ background: 'linear-gradient(to top, rgba(10,6,20,0.8), transparent)' }}
-                  />
-                </div>
-              </div>
-
+            {/* Верхняя часть: текст + главное фото */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start max-w-5xl mx-auto mb-16">
               {/* Текст */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
@@ -352,50 +323,124 @@ export default function Index() {
                   ))}
                 </div>
               </div>
+
+              {/* Главное фото — с картой Таро */}
+              <div className="relative flex justify-center lg:justify-end">
+                <div className="relative" style={{ maxWidth: '380px', width: '100%' }}>
+                  <div className="absolute -inset-3 pointer-events-none" style={{ border: '1px solid rgba(182,139,64,0.2)' }} />
+                  <div className="absolute -inset-6 pointer-events-none" style={{ border: '1px solid rgba(182,139,64,0.07)' }} />
+                  <img
+                    src="https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/1f8175ee-356d-40ff-b12e-9ecf7966b813.png"
+                    alt="Дарья Маг — таролог и практик"
+                    className="w-full object-cover block"
+                    style={{ filter: 'brightness(0.9) contrast(1.05)' }}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(10,6,20,0.7), transparent)' }} />
+                </div>
+              </div>
+            </div>
+
+            {/* Нижняя часть: 3 фото галерея */}
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-3 gap-3 md:gap-4">
+                {[
+                  { url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/4215cc09-371d-4522-aaed-fdf2b5a80c3d.png", caption: "Расклад Таро" },
+                  { url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/7f1c6e0a-fe26-4cff-8cf9-bdfb6a4bc74b.png", caption: "Ритуал со свечой" },
+                  { url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/9ae578ef-a9b0-44fa-81e4-031ed6d8d2a5.png", caption: "Чтение книги" },
+                ].map((photo) => (
+                  <div key={photo.url} className="relative overflow-hidden group" style={{ aspectRatio: '3/4' }}>
+                    <img
+                      src={photo.url}
+                      alt={photo.caption}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      style={{ filter: 'brightness(0.82) contrast(1.06) saturate(0.85)' }}
+                    />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(182,139,64,0.18) 0%, transparent 55%)' }} />
+                    <div className="absolute inset-0 pointer-events-none" style={{ border: '1px solid rgba(182,139,64,0.15)' }} />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-xs tracking-widest uppercase text-center" style={{ color: GOLD, fontFamily: "'Inter', sans-serif" }}>{photo.caption}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ── АТМОСФЕРНАЯ ГАЛЕРЕЯ ── */}
-        <section className="relative z-10 py-16" style={{ background: 'rgba(8,4,16,0.98)' }}>
+        {/* ── ПРИЗНАНИЕ И УЧАСТИЕ ── */}
+        <section id="recognition" className="relative z-10 py-20 md:py-28" style={{ background: 'rgba(8,4,16,0.99)' }}>
           <div className="container">
-            <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
-              {[
-                {
-                  url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/4215cc09-371d-4522-aaed-fdf2b5a80c3d.png",
-                  caption: "Расклад Таро",
-                },
-                {
-                  url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/7f1c6e0a-fe26-4cff-8cf9-bdfb6a4bc74b.png",
-                  caption: "Ритуал с воском",
-                },
-                {
-                  url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/9ae578ef-a9b0-44fa-81e4-031ed6d8d2a5.png",
-                  caption: "Чтение книги",
-                },
-              ].map((photo) => (
-                <div key={photo.url} className="relative overflow-hidden group" style={{ aspectRatio: '3/4' }}>
-                  <img
-                    src={photo.url}
-                    alt={photo.caption}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    style={{ filter: 'brightness(0.85) contrast(1.08) saturate(0.9)' }}
-                  />
-                  {/* золотой оверлей при hover */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{ background: 'linear-gradient(to top, rgba(182,139,64,0.2) 0%, transparent 60%)' }}
-                  />
-                  {/* рамка */}
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{ border: '1px solid rgba(182,139,64,0.15)' }}
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-xs tracking-widest uppercase text-center" style={{ color: GOLD, fontFamily: "'Inter', sans-serif" }}>{photo.caption}</p>
-                  </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="h-px flex-1" style={{ background: 'linear-gradient(to right, transparent, rgba(182,139,64,0.4))' }} />
+                  <span style={{ color: GOLD, fontSize: '18px' }}>✦</span>
+                  <div className="h-px flex-1" style={{ background: 'linear-gradient(to left, transparent, rgba(182,139,64,0.4))' }} />
                 </div>
-              ))}
+                <h2 className="font-sentient text-3xl md:text-4xl mb-3" style={{ color: TEXT_MAIN }}>Признание и участие</h2>
+                <p className="text-sm text-foreground/40 tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  Международные конкурсы, телеканалы и благотворительные проекты
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: "🏆",
+                    title: "Международный конкурс практиков",
+                    sub: "World Esoteric Forum, Вена · 2022",
+                    desc: "Финалист ежегодного европейского форума практикующих тарологов и астрологов. Участие в закрытых мастер-классах.",
+                  },
+                  {
+                    icon: "📺",
+                    title: "Эфир на европейском телевидении",
+                    sub: "Astro TV International, Берлин · 2021",
+                    desc: "Приглашённый эксперт по Таро и рунам. Прямой эфир с аудиторией более 80 000 зрителей в Европе.",
+                  },
+                  {
+                    icon: "🌍",
+                    title: "Форум Американской федерации астрологов",
+                    sub: "AFA Annual Conference, США · 2023",
+                    desc: "Докладчик на секции «Символизм рун и Таро в современном консультировании». Сертифицированный участник.",
+                  },
+                  {
+                    icon: "🎗",
+                    title: "Благотворительная помощь зависимым",
+                    sub: "Recovery & Light Project, Лондон · 2020–2024",
+                    desc: "Волонтёрские консультации для людей в состоянии психологической зависимости. Партнёрство с британским фондом.",
+                  },
+                  {
+                    icon: "📰",
+                    title: "Публикации в профессиональных изданиях",
+                    sub: "Tarot World Magazine (UK) · The Esoteric Review (EU)",
+                    desc: "Авторские статьи о работе с Таро Уэйта и рунами Старшего Футарка в европейских специализированных изданиях.",
+                  },
+                  {
+                    icon: "🤝",
+                    title: "Международный благотворительный форум",
+                    sub: "Global Healing Forum, Амстердам · 2022",
+                    desc: "Участие в открытых сессиях помощи людям в кризисных ситуациях. Работа с участниками из 14 стран.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex gap-4 p-5 transition-all duration-300"
+                    style={{ background: BG_CARD, border: `1px solid ${GOLD_BORDER}`, backdropFilter: 'blur(8px)' }}
+                  >
+                    <div
+                      className="w-10 h-10 shrink-0 flex items-center justify-center text-lg"
+                      style={{ background: GOLD_DIM, border: `1px solid ${GOLD_BORDER}` }}
+                    >
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className="font-sentient text-base mb-0.5" style={{ color: TEXT_MAIN }}>{item.title}</p>
+                      <p className="text-xs mb-2" style={{ color: GOLD, fontFamily: "'Inter', sans-serif", opacity: 0.8 }}>{item.sub}</p>
+                      <p className="text-xs text-foreground/45 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

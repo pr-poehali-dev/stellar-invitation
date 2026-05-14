@@ -10,11 +10,41 @@ export function Hero({ onBooking }: HeroProps) {
   const [hovering, setHovering] = useState(false);
 
   return (
-    <div className="flex flex-col h-svh justify-between relative z-10">
+    <div className="flex flex-col h-svh justify-between relative z-10 overflow-hidden">
       <GL hovering={hovering} />
       <Header onBooking={onBooking} />
 
-      <div className="pb-20 mt-auto text-center relative px-4">
+      {/* Фото Дарьи — призрак за текстом справа */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
+        {/* Десктоп: справа */}
+        <img
+          src="https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/1f8175ee-356d-40ff-b12e-9ecf7966b813.png"
+          alt=""
+          className="hidden sm:block absolute bottom-0 right-0 h-[88%] w-auto object-cover object-top select-none"
+          style={{
+            opacity: 0.18,
+            filter: 'brightness(0.65) saturate(0.5)',
+            WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.1) 75%, transparent 100%), linear-gradient(to top, transparent 0%, black 18%)',
+            maskImage: 'linear-gradient(to left, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.1) 75%, transparent 100%), linear-gradient(to top, transparent 0%, black 18%)',
+          }}
+          draggable={false}
+        />
+        {/* Мобайл: по центру, совсем лёгкий */}
+        <img
+          src="https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/1f8175ee-356d-40ff-b12e-9ecf7966b813.png"
+          alt=""
+          className="block sm:hidden absolute bottom-0 left-1/2 -translate-x-1/2 h-[70%] w-auto object-cover object-top select-none"
+          style={{
+            opacity: 0.1,
+            filter: 'brightness(0.6) saturate(0.4)',
+            WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 20%), linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
+            maskImage: 'linear-gradient(to top, transparent 0%, black 20%)',
+          }}
+          draggable={false}
+        />
+      </div>
+
+      <div className="pb-20 mt-auto text-center relative px-4" style={{ zIndex: 2 }}>
         <div className="mb-6 flex items-center justify-center gap-3 text-foreground/40 tracking-[0.3em] text-xs uppercase" style={{ fontFamily: "'Inter', sans-serif" }}>
           <span style={{ color: '#B68B40' }}>✦</span>
           <span>Таро · Руны · Астрология</span>
