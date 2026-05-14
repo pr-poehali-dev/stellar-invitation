@@ -285,37 +285,117 @@ export default function Index() {
         {/* ── О ДАРЬЕ МАГ ── */}
         <section id="about" className="relative z-10 py-24 md:py-32" style={{ background: 'rgba(10,6,20,0.96)' }}>
           <div className="container">
-            <div className="max-w-2xl mx-auto text-center">
-              <div className="text-5xl mb-8">✦</div>
-              <h2 className="font-sentient text-4xl md:text-5xl mb-8" style={{ color: TEXT_MAIN }}>О Дарье Маг</h2>
-              <div className="divider-gold mb-10" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
 
-              <p className="font-sentient text-xl italic mb-8 leading-relaxed" style={{ color: `${TEXT_MAIN}CC` }}>
-                «Я практик с 7-летним стажем. Не гадаю по телефону и не даю пустых обещаний.»
-              </p>
-
-              <p className="text-sm text-foreground/55 leading-relaxed mb-6" style={{ fontFamily: "'Inter', sans-serif", lineHeight: '1.9' }}>
-                Работаю с Таро Уэйта, Рунами Старшего Футарка и натальными картами.
-                Моя цель — показать возможные пути, а не запугать вас.
-                Ваш запрос всегда остаётся строго конфиденциальным.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4 mt-10">
-                {["Таро Уэйта", "Руны Футарка", "Астрология", "7 лет практики", "Конфиденциально"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-4 py-1.5 text-xs tracking-widest uppercase"
+              {/* Фото */}
+              <div className="relative flex justify-center lg:justify-start">
+                <div className="relative" style={{ maxWidth: '420px', width: '100%' }}>
+                  {/* Золотая рамка-декор */}
+                  <div
+                    className="absolute -inset-3 pointer-events-none"
+                    style={{ border: '1px solid rgba(182,139,64,0.2)' }}
+                  />
+                  <div
+                    className="absolute -inset-6 pointer-events-none"
+                    style={{ border: '1px solid rgba(182,139,64,0.08)' }}
+                  />
+                  <img
+                    src="https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/1f8175ee-356d-40ff-b12e-9ecf7966b813.png"
+                    alt="Дарья Маг — таролог и практик"
+                    className="w-full object-cover"
                     style={{
-                      border: `1px solid ${GOLD_BORDER}`,
-                      color: `${GOLD}CC`,
-                      background: GOLD_DIM,
-                      fontFamily: "'Inter', sans-serif",
+                      filter: 'brightness(0.92) contrast(1.05)',
+                      display: 'block',
                     }}
-                  >
-                    {tag}
-                  </span>
-                ))}
+                  />
+                  {/* Золотой оверлей снизу */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+                    style={{ background: 'linear-gradient(to top, rgba(10,6,20,0.8), transparent)' }}
+                  />
+                </div>
               </div>
+
+              {/* Текст */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <span style={{ color: GOLD, fontSize: '20px' }}>✦</span>
+                  <span className="text-xs tracking-[0.25em] uppercase text-foreground/40" style={{ fontFamily: "'Inter', sans-serif" }}>Практик · 7 лет опыта</span>
+                </div>
+                <h2 className="font-sentient text-4xl md:text-5xl mb-6" style={{ color: TEXT_MAIN }}>О Дарье Маг</h2>
+                <div className="divider-gold mb-8" style={{ margin: '0 0 2rem 0' }} />
+
+                <p className="font-sentient text-xl italic mb-6 leading-relaxed" style={{ color: `${TEXT_MAIN}CC` }}>
+                  «Я практик с 7-летним стажем. Не гадаю по телефону и не даю пустых обещаний.»
+                </p>
+
+                <p className="text-sm text-foreground/55 leading-relaxed mb-8" style={{ fontFamily: "'Inter', sans-serif", lineHeight: '2' }}>
+                  Работаю с Таро Уэйта, Рунами Старшего Футарка и натальными картами.
+                  Моя цель — показать возможные пути, а не запугать вас.
+                  Ваш запрос всегда остаётся строго конфиденциальным.
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  {["Таро Уэйта", "Руны Футарка", "Астрология", "7 лет практики", "Конфиденциально"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1.5 text-xs tracking-widest uppercase"
+                      style={{
+                        border: `1px solid ${GOLD_BORDER}`,
+                        color: `${GOLD}CC`,
+                        background: GOLD_DIM,
+                        fontFamily: "'Inter', sans-serif",
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── АТМОСФЕРНАЯ ГАЛЕРЕЯ ── */}
+        <section className="relative z-10 py-16" style={{ background: 'rgba(8,4,16,0.98)' }}>
+          <div className="container">
+            <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
+              {[
+                {
+                  url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/4215cc09-371d-4522-aaed-fdf2b5a80c3d.png",
+                  caption: "Расклад Таро",
+                },
+                {
+                  url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/7f1c6e0a-fe26-4cff-8cf9-bdfb6a4bc74b.png",
+                  caption: "Ритуал с воском",
+                },
+                {
+                  url: "https://cdn.poehali.dev/projects/a8d4720b-dad4-4d34-a7af-da8f70bb9a72/bucket/9ae578ef-a9b0-44fa-81e4-031ed6d8d2a5.png",
+                  caption: "Чтение книги",
+                },
+              ].map((photo) => (
+                <div key={photo.url} className="relative overflow-hidden group" style={{ aspectRatio: '3/4' }}>
+                  <img
+                    src={photo.url}
+                    alt={photo.caption}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ filter: 'brightness(0.85) contrast(1.08) saturate(0.9)' }}
+                  />
+                  {/* золотой оверлей при hover */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{ background: 'linear-gradient(to top, rgba(182,139,64,0.2) 0%, transparent 60%)' }}
+                  />
+                  {/* рамка */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{ border: '1px solid rgba(182,139,64,0.15)' }}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-xs tracking-widest uppercase text-center" style={{ color: GOLD, fontFamily: "'Inter', sans-serif" }}>{photo.caption}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
