@@ -95,13 +95,13 @@ export function BookingModal({ open, onClose, initialService }: BookingModalProp
 
               <div>
                 <label className="block text-xs tracking-widest uppercase text-foreground/50 mb-2" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  Telegram или Email
+                  Способ связи (Telegram, Email или телефон)
                 </label>
                 <input
                   required
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
-                  placeholder="@nickname или email@example.com"
+                  placeholder="@nickname, email или +7..."
                   className="w-full px-4 py-3 text-sm outline-none transition-all"
                   style={{
                     background: 'rgba(255,255,255,0.04)',

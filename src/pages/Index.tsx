@@ -291,13 +291,13 @@ export default function Index() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <span style={{ color: GOLD, fontSize: '20px' }}>✦</span>
-                  <span className="text-xs tracking-[0.25em] uppercase text-foreground/40" style={{ fontFamily: "'Inter', sans-serif" }}>Практик · 7 лет опыта</span>
+                  <span className="text-xs tracking-[0.25em] uppercase text-foreground/40" style={{ fontFamily: "'Inter', sans-serif" }}>Практик · 15 лет опыта</span>
                 </div>
                 <h2 className="font-sentient text-4xl md:text-5xl mb-6" style={{ color: TEXT_MAIN }}>О Дарье Маг</h2>
                 <div className="divider-gold mb-8" style={{ margin: '0 0 2rem 0' }} />
 
                 <p className="font-sentient text-xl italic mb-6 leading-relaxed" style={{ color: `${TEXT_MAIN}CC` }}>
-                  «Я практик с 7-летним стажем. Не гадаю по телефону и не даю пустых обещаний.»
+                  «Я практик с 15-летним стажем. Не даю пустых обещаний и работаю только честно.»
                 </p>
 
                 <p className="text-sm text-foreground/55 leading-relaxed mb-8" style={{ fontFamily: "'Inter', sans-serif", lineHeight: '2' }}>
@@ -307,7 +307,7 @@ export default function Index() {
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  {["Таро Уэйта", "Руны Футарка", "Астрология", "7 лет практики", "Конфиденциально"].map((tag) => (
+                  {["Таро Уэйта", "Руны Футарка", "Астрология", "15 лет практики", "Конфиденциально"].map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1.5 text-xs tracking-widest uppercase"
@@ -386,40 +386,52 @@ export default function Index() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   {
-                    icon: "🏆",
-                    title: "Международный конкурс практиков",
-                    sub: "World Esoteric Forum, Вена · 2022",
-                    desc: "Финалист ежегодного европейского форума практикующих тарологов и астрологов. Участие в закрытых мастер-классах.",
-                  },
-                  {
-                    icon: "📺",
-                    title: "Эфир на европейском телевидении",
-                    sub: "Astro TV International, Берлин · 2021",
-                    desc: "Приглашённый эксперт по Таро и рунам. Прямой эфир с аудиторией более 80 000 зрителей в Европе.",
-                  },
-                  {
-                    icon: "🌍",
-                    title: "Форум Американской федерации астрологов",
-                    sub: "AFA Annual Conference, США · 2023",
-                    desc: "Докладчик на секции «Символизм рун и Таро в современном консультировании». Сертифицированный участник.",
-                  },
-                  {
-                    icon: "🎗",
-                    title: "Благотворительная помощь зависимым",
-                    sub: "Recovery & Light Project, Лондон · 2020–2024",
-                    desc: "Волонтёрские консультации для людей в состоянии психологической зависимости. Партнёрство с британским фондом.",
+                    icon: "✨",
+                    title: "Первые шаги в практике",
+                    sub: "Школа эзотерики «Путь к свету», Москва · 2010",
+                    desc: "Дипломированный выпускник углублённого курса по Таро Уэйта и символизму рун. Начало частной практики.",
                   },
                   {
                     icon: "📰",
                     title: "Публикации в профессиональных изданиях",
-                    sub: "Tarot World Magazine (UK) · The Esoteric Review (EU)",
-                    desc: "Авторские статьи о работе с Таро Уэйта и рунами Старшего Футарка в европейских специализированных изданиях.",
+                    sub: "Tarot World Magazine (UK) · The Esoteric Review (EU) · с 2012",
+                    desc: "Авторские статьи о работе с Таро и рунами Старшего Футарка в европейских специализированных изданиях.",
+                  },
+                  {
+                    icon: "🎗",
+                    title: "Благотворительная помощь зависимым",
+                    sub: "Recovery & Light Project, Лондон · 2013–2024",
+                    desc: "Волонтёрские консультации для людей в состоянии психологической зависимости. Партнёрство с британским фондом помощи.",
+                  },
+                  {
+                    icon: "🏆",
+                    title: "Международный конкурс практиков",
+                    sub: "World Esoteric Forum, Вена · 2015 и 2019",
+                    desc: "Финалист ежегодного европейского форума тарологов и астрологов. Дважды участник закрытых мастер-классов.",
+                  },
+                  {
+                    icon: "📺",
+                    title: "Эфиры на европейском телевидении",
+                    sub: "Astro TV International, Берлин · 2017, 2019, 2021",
+                    desc: "Приглашённый эксперт по Таро и рунам. Прямые эфиры с суммарной аудиторией более 200 000 зрителей.",
+                  },
+                  {
+                    icon: "🌍",
+                    title: "Форум Американской федерации астрологов",
+                    sub: "AFA Annual Conference, США · 2018 и 2023",
+                    desc: "Докладчик на секции «Символизм рун и Таро в современном консультировании». Сертифицированный участник.",
                   },
                   {
                     icon: "🤝",
                     title: "Международный благотворительный форум",
-                    sub: "Global Healing Forum, Амстердам · 2022",
+                    sub: "Global Healing Forum, Амстердам · 2016 и 2022",
                     desc: "Участие в открытых сессиях помощи людям в кризисных ситуациях. Работа с участниками из 14 стран.",
+                  },
+                  {
+                    icon: "🎓",
+                    title: "15 лет в практике",
+                    sub: "2010 — настоящее время",
+                    desc: "Более 3 000 индивидуальных консультаций. Клиенты из России, Европы и США. Постоянное профессиональное развитие.",
                   },
                 ].map((item) => (
                   <div
@@ -526,8 +538,9 @@ export default function Index() {
                   <p className="text-xs tracking-widest uppercase text-foreground/40 mb-5" style={{ fontFamily: "'Inter', sans-serif" }}>Способы связи</p>
 
                   {[
-                    { icon: "Mail", label: "Email", value: "darya.mag@example.com", href: "mailto:darya.mag@example.com" },
+                    { icon: "Phone", label: "Телефон / WhatsApp", value: "+7 (903) 120-04-11", href: "tel:+79031200411" },
                     { icon: "Send", label: "Telegram", value: "@daryamag_bot", href: "https://t.me/daryamag_bot" },
+                    { icon: "Mail", label: "Email", value: "darya.mag@example.com", href: "mailto:darya.mag@example.com" },
                     { icon: "Instagram", label: "Instagram", value: "@darya.mag", href: "https://instagram.com/darya.mag" },
                   ].map((c) => (
                     <a
